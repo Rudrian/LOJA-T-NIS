@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Perfil - Loja de Tênis</title>
+  <style>
+    /* CSS básico para a página de edição de perfil */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      padding-top: 60px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .profile-container {
+      max-width: 800px;
+      width: 100%;
+      margin: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .profile-container h1 {
+      margin-bottom: 20px;
+      color: #333;
+      text-align: center;
+    }
+    .profile-edit label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .profile-edit input {
+      width: calc(100% - 20px);
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+    }
+    .save-button {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .save-button:hover {
+      background-color: #555;
+    }
+    a {
+      display: block;
+      margin-top: 10px;
+      text-align: center;
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <h1>Editar Perfil</h1>
+    <div class="profile-edit">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" placeholder="Seu nome">
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Seu email">
+      <label for="endereco">Endereço:</label>
+      <input type="text" id="endereco" placeholder="Seu endereço">
+      <button class="save-button" onclick="salvarPerfil()">Salvar</button>
+      <a href="perfil.html">Voltar ao perfil</a>
+    </div>
+  </div>
+
+  <script>
+    // Função para carregar os dados do perfil na página de edição
+    function carregarDados() {
+      var cadastro = JSON.parse(localStorage.getItem('cadastro'));
+      
+      if (cadastro) {
+        document.getElementById('nome').value = cadastro.nome || '';
+        document.getElementById('email').value = cadastro.email || '';
+        document.getElementById('endereco').value = cadastro.endereco || '';
+      }
+    }
+
+    // Função para salvar os dados do perfil
+    function salvarPerfil() {
+      var nome = document.getElementById('nome').value;
+      var email = document.getElementById('email').value;
+      var endereco = document.getElementById('endereco').value;
+
+      var cadastro = JSON.parse(localStorage.getItem('cadastro')) || {};
+      cadastro.nome = nome;
+      cadastro.email = email;
+      cadastro.endereco = endereco;
+
+      localStorage.setItem('cadastro', JSON.stringify(cadastro));
+      alert('Perfil atualizado com sucesso!');
+      window.location.href = 'perfil.html';
+    }
+
+    // Carregar dados ao carregar a página
+    window.onload = carregarDados;
+  </script>
+</body>
+</html>

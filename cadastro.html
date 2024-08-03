@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Loja de Tênis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .container img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .container h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .container input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .container button:hover {
+            background-color: #0056b3;
+        }
+
+        .container p {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .container a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="https://i.im.ge/2024/08/03/fTFvgD.1000356521.th.png" alt="Logo da Loja">
+        <h1>Cadastro - Loja de Tênis</h1>
+        <form id="cadastroForm">
+            <input type="text" id="nome" placeholder="Nome Completo" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="tel" id="telefone" placeholder="Telefone" required>
+          <input type="text" id="endereço" placeholder="Endereço" required>
+            <input type="password" id="senha" placeholder="Senha" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+        <p>Já possui uma conta? <a href="index.html">Faça login aqui</a>.</p>
+    </div>
+
+    <script>
+        const form = document.getElementById('cadastroForm');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const telefone = document.getElementById('telefone').value;
+            const senha = document.getElementById('senha').value;
+
+            const cadastro = {
+                nome,
+                email,
+                telefone,
+                senha
+            };
+
+            localStorage.setItem('cadastro', JSON.stringify(cadastro));
+
+            alert("Cadastro realizado com sucesso!");
+
+            window.location.href = "index.html";
+        });
+    </script>
+</body>
+
+</html>

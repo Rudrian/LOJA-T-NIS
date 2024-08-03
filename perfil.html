@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil - Loja de Tênis</title>
+  <style>
+    /* CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      padding-top: 60px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 15px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .logo-loja img {
+      width: 75px;
+      height: 75px;
+      border: 2px solid #333;
+      border-radius: 8px;
+    }
+    .search-bar {
+      display: flex;
+      align-items: center;
+      background-color: #444;
+      border-radius: 5px;
+      padding: 5px;
+      margin-left: 20px;
+    }
+    .search-bar input {
+      border: none;
+      padding: 5px;
+      border-radius: 5px;
+      width: 150px;
+      outline: none;
+    }
+    .search-bar button {
+      background-color: #555;
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 5px;
+    }
+    .search-bar button:hover {
+      background-color: #666;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+    }
+    nav ul li a:hover {
+      background-color: #555;
+      border-radius: 5px;
+    }
+    main {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .profile-container {
+      max-width: 800px;
+      width: 100%;
+      margin: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .profile-container h1 {
+      margin-bottom: 20px;
+      color: #333;
+      text-align: center;
+    }
+    .profile-info, .profile-edit {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .profile-info label, .profile-edit label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .profile-info p, .profile-edit input {
+      margin-bottom: 15px;
+    }
+    .profile-edit input {
+      width: calc(100% - 20px);
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .save-button, .edit-button, .logout-button {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .save-button:hover, .edit-button:hover, .logout-button:hover {
+      background-color: #555;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .config-icon {
+      position: relative;
+      cursor: pointer;
+      fill: white;
+      z-index: 1001;
+      margin-left: auto;
+    }
+    .config-menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #333;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      z-index: 1002;
+      min-width: 150px;
+    }
+    .config-menu a {
+      display: block;
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+    }
+    .config-menu a:hover {
+      background-color: #555;
+    }
+    .config-menu.show {
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .search-bar {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+      }
+      .search-bar input {
+        width: calc(100% - 120px);
+      }
+      nav ul {
+        justify-content: center;
+        width: 100%;
+      }
+      nav ul li {
+        margin: 10px 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-loja">
+      <img src="https://i.im.ge/2024/08/03/fTFvgD.1000356521.th.png" alt="Logo da Loja">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="Lojaofc.html">Home</a></li>
+        <li><a href="tenis-loja.html">Loja</a></li>
+        <li><a href="contatos.html">Contato</a></li>
+        <li><a href="descontos.html">Ofertas</a></li>
+      </ul>
+    </nav>
+    <div class="search-bar">
+      <input type="text" placeholder="Pesquisar...">
+      <button type="submit">Pesquisar</button>
+  </header>
+  <main>
+    <div class="profile-container">
+      <h1>Perfil do Usuário</h1>
+            <div class="profile-info">
+        <label for="nome">Nome:</label>
+        <p id="nome"></p>
+        <label for="email">Email:</label>
+        <p id="email"></p>
+        <label for="endereco">Endereço:</label>
+        <p id="endereco"></p>
+      </div>
+      <button class="edit-button" onclick="editarPerfil()">Editar Perfil</button>
+      <button class="logout-button" onclick="logout()">Sair</button>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2024 Loja de Tênis. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Função para carregar as informações do perfil do localStorage
+    function carregarPerfil() {
+      var cadastro = JSON.parse(localStorage.getItem('cadastro'));
+
+      if (cadastro) {
+        document.getElementById('nome').innerText = cadastro.nome || 'Não definido';
+        document.getElementById('email').innerText = cadastro.email || 'Não definido';
+        document.getElementById('endereco').innerText = cadastro.endereco || 'Não definido';
+      } else {
+        document.getElementById('nome').innerText = 'Não definido';
+        document.getElementById('email').innerText = 'Não definido';
+        document.getElementById('endereco').innerText = 'Não definido';
+      }
+    }
+
+    // Função para editar perfil (exemplo)
+    function editarPerfil() {
+      window.location.href='editarperfil.html';
+      // Aqui você pode redirecionar para a página de edição ou abrir um modal de edição
+    }
+
+    // Função para sair (exemplo)
+    function logout() {
+      // Limpar o localStorage ou redirecionar para a página de login
+      localStorage.removeItem('cadastro');
+      alert('Você saiu da sua conta.');
+      window.location.href = 'index.html';
+    }
+
+    // Carregar perfil quando a página for carregada
+    window.onload = carregarPerfil;
+  </script>
+</body>
+</html>

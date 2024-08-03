@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Loja de Tênis</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+    }
+
+    .login-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .login-container img {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .login-container button:hover {
+      background-color: #0056b3;
+    }
+
+    .container-senha {
+      display: flex;
+      align-items: center;
+    }
+
+    .container-senha input[type="password"] {
+      flex-grow: 1;
+    }
+
+    .container-senha button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .container-senha svg {
+      fill: #333;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-container">
+    <a href="início.html">
+      <img src="https://i.im.ge/2024/08/03/fTFvgD.1000356521.th.png" alt="Logo da Loja">
+    </a>
+    <h2>Login - Loja de Tênis</h2>
+    <!-- Campo de entrada para o login -->
+    <input type="text" id="login" placeholder="Email">
+    <!-- Campo de entrada para a senha com botão para mostrar/ocultar -->
+    <div class="container-senha">
+      <input type="password" id="senha" placeholder="Senha">
+      <button type="button" class="olho" onclick="mostrarSenha()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16">
+          <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.77a8.962 8.962 0 0 1 4.153-4.334c2.121-1.849 3.347-2.543 5.482-3.013a1.139 1.139 0 0 1 .816-.494A1.793 1.793 0 0 1 18.8 8c0 .841-.688 2-2 2-.657 0-1.238-.177-1.618-.504l-.708.709a9.174 9.174 0 0 1-2.767-1.685c-.16-.123-.333-.234-.514-.329a11.197 11.197 0 0 1 5.914 4.026zM8 14c-2.673 0-5-2.327-5-5s2.327-5 5-5 5 2.327 5 5-2.327 5-5 5z" />
+        </svg>
+      </button>
+    </div>
+    <!-- Botão para login -->
+    <button type="button" onclick="logar()">Entrar</button>
+    <!-- Link para a página de cadastro -->
+    <a href="cadastro.html">Ainda não tem cadastro? Cadastre-se aqui.</a>
+  </div>
+
+  <script>
+    // Função para realizar o login
+    function logar() {
+      var login = document.getElementById('login').value;
+      var senha = document.getElementById('senha').value;
+
+      var cadastro = JSON.parse(localStorage.getItem('cadastro'));
+
+      if (login === cadastro.email && senha === cadastro.senha) {
+        alert("Login efetuado com sucesso, " + cadastro.nome + "!");
+        location.href = "Lojaofc.html";
+      } else {
+        alert("Login ou senha incorretos!");
+      }
+    }
+
+    // Função para mostrar ou ocultar a senha
+    function mostrarSenha() {
+      var senha = document.getElementById('senha');
+
+      if (senha.type === "password") {
+        senha.type = "text";
+      } else {
+        senha.type = "password";
+      }
+    }
+  </script>
+</body>
+
+</html>
