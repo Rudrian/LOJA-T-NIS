@@ -189,7 +189,13 @@
       nav ul li {
         margin: 10px 5px;
       }
-    }
+      .config-menu {
+  display: none;
+}
+.config-menu.visible {
+  display: block;
+}
+
   </style>
 </head>
 <body>
@@ -224,45 +230,52 @@
       <h1>Tênis Disponíveis</h1>
       <div class="product-list">
         <div class="product-item">
-          <a href="pagamento.html?produto=Tenis1&preco=199.90">
-            <img src="https://via.placeholder.com/200" alt="Tênis 1">
-            <h3>Tênis 1</h3>
-            <p>R$ 199,90</p>
+          <a href="pagamento.html?produto=Tênis Nike Air Max&preco=849,99">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYFjfKy65YPIUe6ABkAEeNoTZGbMPfOV1ms9BrA8dBr6HKbQ7vaAb5ZZw&s=10" alt="Tênis 1">
+            <h3>Tênis Nike Air Max</h3>
+            <p>R$ 849,99</p>
           </a>
         </div>
         <div class="product-item">
-          <a href="pagamento.html?produto=Tenis2&preco=249.90">
-            <img src="https://via.placeholder.com/200" alt="Tênis 2">
-            <h3>Tênis 2</h3>
-            <p>R$ 249,90</p>
+          <a href="pagamento.html?produto=Tênis Nike Air Jordan 2 Retro Low&preco=799,99">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCXHflJeQ_4pXPFmnK2BSl1Z8pIwSfVQJK3CnEBiCq7bPyD0wsxMckjxU&s=10" alt="Tênis 2">
+            <h3>Tênis Nike Air Jordan 2 Retro Low</h3>
+            <p>R$ 799,99</p>
           </a>
         </div>
         <div class="product-item">
-          <a href="pagamento.html?produto=Tenis3&preco=299.90">
-            <img src="https://via.placeholder.com/200" alt="Tênis 3">
-            <h3>Tênis 3</h3>
-            <p>R$ 299,90</p>
+          <a href="pagamento.html?produto=Tênis Nike Winflo 10 SE&preco=499,99">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2djWRTIhRD5nFvoGibpir4hC7Ma8cYrDGCXbpBktgc8IgPhqMArid37E&s=10" alt="Tênis 3">
+            <h3>Tênis Nike Winflo 10 SE</h3>
+            <p>R$ 499,99</p>
           </a>
         </div>
         <div class="product-item">
-          <a href="pagamento.html?produto=Tenis4&preco=149.90">
-            <img src="https://via.placeholder.com/200" alt="Tênis 4">
-            <h3>Tênis 4</h3>
-            <p>R$ 149,90</p>
+          <a href="pagamento.html?produto=Tênis Nike Lebron XXI&preco=1429,00">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSktuuX6_2lvSqXp6Amu6oe6J1BqtFoyfXoC08TYKhWqXeoGw6t87zmjGCN&s=10" alt="Tênis 4">
+            <h3>Tênis Nike Lebron XXI</h3>
+            <p>R$ 1429,00</p>
           </a>
         </div>
         <div class="product-item">
-          <a href="pagamento.html?produto=Tenis5&preco=189.90">
-            <img src="https://via.placeholder.com/200" alt="Tênis 5">
-            <h3>Tênis 5</h3>
-            <p>R$ 189,90</p>
+          <a href="pagamento.html?produto=Tênis Nike Pegasus 40&preco=579,99">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdpPR2j_v9e7dhpJ7y3fohlrRDaBPOzhSyNTYWMpEhaaVBkuDa8oO3FSw5&s=10" alt="Tênis 5">
+            <h3>Tênis Nike Pegasus 40</h3>
+            <p>R$ 579,99</p>
           </a>
         </div>
         <div class="product-item">
-          <a href="resultados.html?produto=Tenis6&preco=219.90">
-            <img src="https://via.placeholder.com/200" alt="Tênis 6">
-            <h3>Tênis 6</h3>
-            <p>R$ 219,90</p>
+          <a href="resultados.html?produto=Tênis Nike Dunk Mid&preco=749,00">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyCJ6TQeR8wGys5vns36SDXz13UxkLxn3ly_ajk9uACdmVkJbU4aOtcUA&s=10" alt="Tênis 6">
+            <h3>Tênis Nike Dunk Mid</h3>
+            <p>R$ 749,00</p>
+          </a>
+        </div>
+         <div class="product-item">
+          <a href="resultados.html?produto=>Tênis Nike Air Max Pulse&preco=979,99">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0yXQ5y7wiDxvtBJeh_ATKz5sb-M9ahQX5NAm_dvWAQZ76DzKLGQZIdps&s=10" alt="Tênis 6">
+            <h3>Tênis Nike Air Max Pulse</h3>
+            <p>R$ 979,99</p>
           </a>
         </div>
       </div>
@@ -287,6 +300,11 @@ function search() {
   if (query) {
     window.location.href = `resultados.html?search=${encodeURIComponent(query)}`;
   }
+  function toggleConfigMenu() {
+  const configMenu = document.getElementById('configMenu');
+  configMenu.classList.toggle('visible');
+}
+
 }
   </script>
 </body>

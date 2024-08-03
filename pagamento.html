@@ -144,8 +144,8 @@
   <script>
     // Obtém os parâmetros da URL
     const urlParams = new URLSearchParams(window.location.search);
-    const produto = urlParams.get('produto');
-    const preco = urlParams.get('preco');
+    const produto = urlParams.get('produto') || 'Produto Indefinido';
+    const preco = urlParams.get('preco') || '0,00';
 
     // Define o nome e o preço do produto na página
     document.getElementById('produto-nome').innerText = produto;
